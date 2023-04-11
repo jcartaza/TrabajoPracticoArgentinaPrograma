@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0pDeSjxMe4FS-QlgSuUQIJ_0BDPKd-BvkCg&usqp=CAU');
 
 
 /* variables de color */
@@ -18,7 +18,12 @@
 
 
 /* SECCION HEADER */
-
+body{
+  background-image: url('data:image/jpeg;base64,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');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 header{
   background: linear-gradient(orangered, orange);
   height: 80px;
@@ -305,9 +310,25 @@ header{
 .mostrar{
   display: none;
 }
+.text_btn{
+  cursor:pointer;
+  padding: 10px;
+  background-color: white;
+  color: gray;
+  border-radius: 5px;
+}
+.text_btn:hover, .text_btn1:hover{
+  background-color: #888;
+  color: white;
+}
 
 .text_btn1{
   display: none;
+  cursor:pointer;
+  padding: 10px;
+  background-color: white;
+  color: gray;
+  border-radius: 5px;
 }
 /* fin tarjeta dinamica */
 
