@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./imagenes/argentinaBandera.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./css/style.css">
+	<title>NORTURISMO - Turismo del Norte Argentino</title>
+
+  </head>
+  <body>
+   <header>
+		 <nav class="nav">
+			<a href="#" class="logo nav-link"><img src="./imagenes/norturismo3.svg" alt="NORTURISMO"></a>
+			<button class="nav-toggle" aria-label="Abrir menú">
+			  <i class="fas fa-bars"></i>
+			</button>
+			<ul class="nav-menu">
+			  <li class="nav-menu-item">
+				<a href="#inicio" class="nav-menu-link nav-link">Inicio</a>
+			  </li>
+			  <li class="nav-menu-item">
+				<a href="#quienes-somos" class="nav-menu-link nav-link">Quienes Somos</a>
+			  </li>
+			  <li class="nav-menu-item">
+				<a href="#paq" class="nav-menu-link nav-link">Paquetes</a>
+			  </li>
+			  <li class="nav-menu-item">
+				<a href="#cotizador" class="nav-menu-link nav-link">Cotizador</a>
+			  </li>
+			  <li class="nav-menu-item">
+				<a href="#contacto" class="nav-menu-link nav-link">Contacto</a>
+			  </li>
+			</ul>
+		  </nav>
+		  
+   </header>
+	<main>
+	<!-- INICIO -->
+		<section id="inicio" class="inicio">
+			<h2>Bienvenidos a NORTURISMO</h2>
+			<p>Descubre los paisajes más hermosos del norte argentino.</p>
+		</section>	
+		
+	<!-- QUIENES SOMOS -->
+		<section id="quienes-somos" class="seccion1">
+			<h2>Quiénes somos</h2>
+			<p>Somos una empresa creada por profesionales de turismo que comparten la pasión por los viajes a través del Norte Argentino, sitios por los cuales estuvimos viajando y trabajando por más de 15 años de manera ininterrumpida, ésto nos permitió conocerlos a fondo y maravillarnos con sus coloridas montañas, sus imponentes volcanes, sus extensos salares y por supuesto sus pintorescas lagunas las cuales se hallan escondidas por toda la asombrosa geografía andina. Así como los paisajes nos asombraron, también lo hicieron los incansables habitantes de estas latitudes, los cuales en más de una oportunidad nos brindaron su ayuda, su conocimiento ancestral, su alimento y su eterna hospitalidad.</p>
+		
+			<p>Sin embargo con el paso del tiempo notamos como el turismo empezó a crecer en forma acelerada en estas comunidades (muchas veces sin planificación alguna), por ello decidimos involucrarnos desde nuestra posición de profesionales en turismo en la planificación, formación y el trabajo más íntimo con las comunidades locales y su ambiente.</p>
+			
+			<p>De esta manera intentamos que esos pobladores que habitan en aquellos destinos que operamos, fueran transformándose en protagonistas de los productos turísticos que allí desarrollamos y así nació Turismo Responsable Tour Operator, una agencia de viajes que te ofrece circuitos y programas de <strong>TURISMO RESPONSABLE</strong> y que trabaja con comunidades locales a lo largo de todo el Mundo Andino, promoviendo siempre un estilo de Turismo que se lleve a cabo de manera sostenible.</p>
+			
+			<p>Es nuestro deseo que puedas ser participe de esta difícil, pero gratificante tarea que requiere el <strong>TURISMO RESPONSABLE</strong> en esta región del planeta y al mismo tiempo que puedas disfrutar de nuestra oferta turística ayudándonos a mantener la calidad de la misma y de los destinos que operamos.</p>
+
+			<ul class="galeria">
+				<li><img src="./imagenes/actividades (1).jpg" alt=""></li>
+				<li><img src="./imagenes/actividades (2).jpg" alt=""></li>
+				<li><img src="./imagenes/actividades (3).jpg" alt=""></li>
+			</ul>
+		</section>
+
+	<!-- PAQUETES TURISTICOS -->
+	
+		<section id="paq" class="seccion2">
+			<h2>Paquetes turisticos</h2>
+			<div id="card" class="contenedorTarjeta">	</div>
+		</section>
+	   
+	<!-- COTIZADOR -->
+		<section id="cotizador" class="seccion3">
+			<div>
+				<h2>Cotizador de Paquetes Turisticos</h2>
+			</div>
+			
+			<div class="seccion-cotizador">
+				<form id="formulario" class="form-cotizador">
+					<div class="campo">
+						<select id="selectProvincias" name="selectProvincias"  required>
+							<option value="0">Elige una provincia</option>
+						</select>
+					</div>
+					<div class="campo">
+						<select id="selectPaquete" name="selectPaquete" aria-placeholder="Paquetes Turisticos" required>
+							<option value="0">Elige un Destino</option>
+						</select>
+					</div>
+					<div class="campo">
+						<input type="number" id="adultos" name="adultos" min="1" max="10" placeholder="Cantidad de Adultos" required>
+					</div>
+					<div class="campo">
+						<input type="number" id="menores" name="menores" min="0" max="10" placeholder="Cantidad de Menores" required>
+					</div>
+			
+					<div class="boton-enviar">
+						<button type="button" id="calcular-button">Calcular</button>
+					</div>
+				
+
+
+					<div id="Modal" class="modal">
+						<div class="modal-contenido">
+							<span class="close">&times;</span>
+						
+						<div class="resultado">
+							<h3>Cotizacion Paquete:</h3>
+							<p id="total"></p>
+						</div>
+						<button type="button" id="download-button" >Descargar PDF</button>
+						<button type="button" id="edit-button">Editar Cotizacion</button>
+						</div>
+					</div>
+				</form>
+
+				<img src="./imagenes/tucuman4.jpg" alt="">
+
+			</div>
+
+
+		</section>
+
+	<!-- FORMULARIO DE CONTACTO -->
+		<section id="contacto" class="seccion4">
+			<div>
+				<h2>Contacto</h2>
+				<p>Contáctanos para obtener más información sobre nuestros paquetes turísticos.</p>
+			</div>
+
+			<div class="seccion-contacto">
+				<img src="./imagenes/salta3.jpg" alt="">
+			
+				<form id="contact" class="form-contacto">
+					<div class="campo">
+						<input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
+						<div class="error-message"></div>
+					</div>
+					<div class="campo">
+						<input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+						<div class="error-message"></div>
+					</div>
+					<div class="campo">
+						<input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
+						<div class="error-message"></div>
+					</div>
+					<div class="campo">
+						<textarea id="comentarios" name="comentarios" placeholder="Escriba aqui sus comentarios"></textarea>
+					</div>
+					<div id="boton-enviar" class="boton-enviar">
+						<button type="submit">Enviar</button>
+						<div>
+							<p class="mensaje-exito" id="mensaje-exito">Formulario enviado exitosamente!</p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER -->
+    <footer>
+		
+		<div class="icons">
+			<div class="icons"><i class="fa-brands fa-facebook-f"></i></div>
+			<div class="icons"><i class="fa-brands fa-instagram"></i></div>
+			<div class="icons"><i class="fa-brands fa-twitter"></i></div>
+			<div class="icons"><i class="fa-brands fa-telegram"></i></div>
+			<div class="icons"><i class="fa-brands fa-youtube"></i></div>
+		</div>
+		<br>
+		<br>
+    	<p class="text-footer">Derechos reservados &copy; 2023 NORTURISMO</p>
+    </footer>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="./js/app.js"></script>
+	
+	
+  </body>
+</html>
