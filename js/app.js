@@ -35,13 +35,13 @@ fetch("./database.json")
                     <h2 class="destino">${viaje.nombre}</h2>
                 </div>
                 <div>
-                    <p>${viaje.desCorta}</p>
+                    <p>${viaje.desCorta}</p></br>
                     <p>Precios</p>
-                    <h3>Adultos: <strong>$${viaje.precioA}</strong></h3>
-                    <h3>Menores: <strong>$${viaje.precioM}</strong></h3>
+                    <h3>Adultos :  <strong>$${viaje.precioA}</strong></h3>
+                    <h3>Menores :  <strong>$${viaje.precioM}</strong></h3></br>
                     <button class="text_btn" id="text_btn">Conocé más</button>
                     <div class="mostrar">
-                    <p>${viaje.desLarga}</p>
+                    <p>${viaje.desLarga}</p></br>
                     <button class="text_btn1" id="text_btn1">Ocultar</button>
                     <div>
                 </div>`;
@@ -91,6 +91,7 @@ const adultosInput = document.getElementById("adultos");
 const menoresInput = document.getElementById("menores");
 const resultadoTotal = document.getElementById("total");
 const errorMensaje = document.querySelectorAll(".error-mensaje");
+
 
 let paquetes;
 // guardo el json en un variable
@@ -220,9 +221,11 @@ form.addEventListener('submit', (event) => {
 	// Submit el formulario si todos los campos son validos y muestra un mensaje de enviado exitosamente que desaparece a los 5 segundos
 	if (valid) {
 	  form.reset();
+    document.getElementById('boton-enviar').classList.add('boton-enviar-ocultar');
     document.getElementById('mensaje-exito').classList.add('mensaje-exito-activo');
 		setTimeout(() => {
 			document.getElementById('mensaje-exito').classList.remove('mensaje-exito-activo');
+      document.getElementById('boton-enviar').classList.remove('boton-enviar-ocultar');
 		}, 5000);
 	}
   });
