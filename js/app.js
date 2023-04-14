@@ -11,7 +11,7 @@
      navToggle.setAttribute("aria-label", "Abrir menú");
    }
  });
- //Oculto los links y muestro el icono de menu
+ // Esconder el menu cuando seleccionamos una opcion
 const navLinks = document.querySelectorAll(".nav-menu a");
 
 navLinks.forEach((link) => {
@@ -23,7 +23,7 @@ navLinks.forEach((link) => {
 //Tarjetas dinamicas, cargadas con datos de database.json
 const cardHTML = document.getElementById("card")
 
-fetch("./database.json")
+fetch("./db/database.json")
     .then(response => response.json())
     .then(data => {
         data.forEach(viaje => {
@@ -44,7 +44,8 @@ fetch("./database.json")
                     <p>${viaje.desLarga}</p></br>
                     <button class="text_btn1" id="text_btn1">Ocultar</button>
                     <div>
-                </div>`;
+                </div>
+                `;
                 cardHTML.appendChild(tarjeta);
                 const stext_btn = tarjeta.querySelector('.text_btn');
                 const smostrar = tarjeta.querySelector('.mostrar');
@@ -63,6 +64,7 @@ fetch("./database.json")
         });
     });
 
+    
 
 //cotizador de paquetes turisticos
 const origenSelect = document.getElementById("selectProvincias");
@@ -96,7 +98,7 @@ const errorMensaje = document.querySelectorAll(".error-mensaje");
 let paquetes;
 // guardo el json en un variable
 async function CargarPaquetes() {
-  const response = await fetch("database.json");
+  const response = await fetch("./db/database.json");
    paquetes = await response.json();
 // agrego los paquetes por nombre al select
   paquetes.forEach((pqt) => {
@@ -125,9 +127,16 @@ function calcularPrecio() {
   const editButton = document.getElementById("edit-button");
   const jsPDF = window.jspdf.jsPDF;
   const precioTotal = precio.toFixed(2);
-  resultadoTotal.innerHTML = `Precio total para ${adultos} adultos y ${menores} menores, partiendo desde ${origenProv} con el paquete ${paquete.nombre}, precio total : $${precioTotal}`;
+  resultadoTotal.innerHTML = `
+        <p>Precio total para ${adultos} adultos</p><br>
+        <p>y ${menores} menores, </p><br>
+        <p>partiendo desde ${origenProv}</p><br>
+        <p>con el paquete ${paquete.nombre},</p><br>
+        <p>precio total : $${precioTotal}</p><br>`;
   modal.style.display = "block";
-//funcion para descargar el pdf con un formato muy basico
+
+
+  //funcion para descargar el pdf con un formato muy basico
   downloadButton.addEventListener("click", () => {
     const doc = new jsPDF();
     const imgPdf='./imagenes/norturismopdf.jpg';
@@ -172,7 +181,7 @@ CargarPaquetes().then(()=>{
   calcularBtn.addEventListener('click', calcularPrecio);
 })
 
-//validacion del formulario de contacto atravez de expresiones regulares
+//validacion del formulario de contacto a traves de expresiones regulares
 const form = document.getElementById('contact');
 
 const nombre = document.getElementById('nombre');

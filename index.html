@@ -12,29 +12,29 @@
   </head>
   <body>
    <header>
-		 <nav class="nav">
+		<nav class="nav">
 			<a href="#" class="logo nav-link"><img src="./imagenes/norturismo3.svg" alt="NORTURISMO"></a>
 			<button class="nav-toggle" aria-label="Abrir menú">
-			  <i class="fas fa-bars"></i>
+			<i class="fas fa-bars"></i>
 			</button>
 			<ul class="nav-menu">
-			  <li class="nav-menu-item">
+			<li class="nav-menu-item">
 				<a href="#inicio" class="nav-menu-link nav-link">Inicio</a>
-			  </li>
-			  <li class="nav-menu-item">
+			</li>
+			<li class="nav-menu-item">
 				<a href="#quienes-somos" class="nav-menu-link nav-link">Quienes Somos</a>
-			  </li>
-			  <li class="nav-menu-item">
+			</li>
+			<li class="nav-menu-item">
 				<a href="#paq" class="nav-menu-link nav-link">Paquetes</a>
-			  </li>
-			  <li class="nav-menu-item">
+			</li>
+			<li class="nav-menu-item">
 				<a href="#cotizador" class="nav-menu-link nav-link">Cotizador</a>
-			  </li>
-			  <li class="nav-menu-item">
+			</li>
+			<li class="nav-menu-item">
 				<a href="#contacto" class="nav-menu-link nav-link">Contacto</a>
-			  </li>
+			</li>
 			</ul>
-		  </nav>
+		</nav>
 		  
    </header>
 	<main>
@@ -50,17 +50,25 @@
 			<p>Somos una empresa creada por profesionales de turismo que comparten la pasión por los viajes a través del Norte Argentino, sitios por los cuales estuvimos viajando y trabajando por más de 15 años de manera ininterrumpida, ésto nos permitió conocerlos a fondo y maravillarnos con sus coloridas montañas, sus imponentes volcanes, sus extensos salares y por supuesto sus pintorescas lagunas las cuales se hallan escondidas por toda la asombrosa geografía andina. </p>
 			<p>Es nuestro deseo que puedas ser participe de esta difícil, pero gratificante tarea que requiere el <strong>TURISMO RESPONSABLE</strong> en esta región del planeta y al mismo tiempo que puedas disfrutar de nuestra oferta turística ayudándonos a mantener la calidad de la misma y de los destinos que operamos.</p>
 
-			<ul class="galeria">
-				<li><img src="./imagenes/actividades (1).jpg" alt=""></li>
-				<li><img src="./imagenes/actividades (2).jpg" alt=""></li>
-				<li><img src="./imagenes/actividades (3).jpg" alt=""></li>
-			</ul>
+			<div class="galeria">
+				<img src="./imagenes/actividades (3).jpg" alt="Actividades para hacer en el norte">
+				<img src="./imagenes/actividades (4).jpg" alt="Actividades para hacer en el norte">
+				<img src="./imagenes/actividades (10).jpg" alt="Actividades para hacer en el norte">
+			</div>
+			<div class="slider">
+				<ul>
+					<li><img src="./imagenes/actividades (3).jpg" alt="Actividades para hacer en el norte"></li>
+					<li><img src="./imagenes/actividades (4).jpg" alt="Actividades para hacer en el norte"></li>
+					<li><img src="./imagenes/actividades (10).jpg" alt="Actividades para hacer en el norte"></li>
+				</ul>
+			</div>
 		</section>
 
 	<!-- PAQUETES TURISTICOS -->
 	
 		<section id="paq" class="seccion2">
 			<h2>Paquetes turisticos</h2>
+			<p>Seleccione y cotice su paquetes turísticos para viajar con Norturismo.</p>
 			<div id="card" class="contenedorTarjeta">	</div>
 		</section>
 	   
@@ -68,25 +76,30 @@
 		<section id="cotizador" class="seccion3">
 			<div>
 				<h2>Cotizador de Paquetes Turisticos</h2>
+				<p>Seleccione y cotice su paquetes turísticos para viajar con Norturismo.</p>
 			</div>
 			
 			<div class="seccion-cotizador">
 				<form id="formulario" class="form-cotizador">
 					<div class="campo">
+						<label for="selectProvincias">Selecciona tu Provincia:</label>
 						<select id="selectProvincias" name="selectProvincias"  required>
-							<option value="0">Elige una provincia</option>
+							<option value="0"></option>
 						</select>
 					</div>
 					<div class="campo">
+						<label for="selectPaquete">Selecciona el paquetes turístico:</label>
 						<select id="selectPaquete" name="selectPaquete" aria-placeholder="Paquetes Turisticos" required>
-							<option value="0">Elige un Destino</option>
+							<option value="0"></option>
 						</select>
 					</div>
 					<div class="campo">
-						<input type="number" id="adultos" name="adultos" min="1" max="10" placeholder="Cantidad de Adultos" required>
+						<label for="adultos">Indique cantidad de adultos que viajan:</label>
+						<input type="number" id="adultos" name="adultos" min="1" max="10" placeholder="" required>
 					</div>
 					<div class="campo">
-						<input type="number" id="menores" name="menores" min="0" max="10" placeholder="Cantidad de Menores" required>
+						<label for="adultos">Indique cantidad de menores que viajan:</label>
+						<input type="number" id="menores" name="menores" min="0" max="10" placeholder="" required>
 					</div>
 			
 					<div class="boton-enviar">
@@ -98,13 +111,13 @@
 					<div id="Modal" class="modal">
 						<div class="modal-contenido">
 							<span class="close">&times;</span>
-						
-						<div class="resultado">
-							<h3>Cotizacion Paquete:</h3>
-							<p id="total"></p>
-						</div>
-						<button type="button" id="download-button" >Descargar PDF</button>
-						<button type="button" id="edit-button">Editar Cotizacion</button>
+							<div class="resultado">
+								<h3>Cotizacion Paquete:</h3>
+								<img src="./imagenes/norturismo1.svg" alt="">
+								<p id="total"></p>
+							</div>
+							<button type="button" class="boton-desc" id="download-button">Descargar PDF</button>
+							<button type="button" class="boton-edit" id="edit-button">Editar Cotizacion</button>
 						</div>
 					</div>
 				</form>
@@ -128,22 +141,28 @@
 			
 				<form id="contact" class="form-contacto">
 					<div class="campo">
-						<input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
+						<label for="nombre">Nombre y Apellido</label>
+						<input type="text" id="nombre" name="nombre" placeholder="Mario Perez" required>
 						<div class="error-message"></div>
 					</div>
 					<div class="campo">
-						<input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+						<label for="email">Correo Eléctronico</label>
+						<input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
 						<div class="error-message"></div>
 					</div>
 					<div class="campo">
-						<input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
+						<label for="telefono">Teléfono</label>
+						<input type="text" id="telefono" name="telefono" placeholder="Ejemplo: 1147412202" required>
 						<div class="error-message"></div>
 					</div>
 					<div class="campo">
-						<textarea id="comentarios" name="comentarios" placeholder="Escriba aqui sus comentarios"></textarea>
+						<label for="comentarios">Comentarios</label>
+						<textarea id="comentarios" name="comentarios"></textarea>
 					</div>
-					<div id="boton-enviar" class="boton-enviar">
-						<button type="submit">Enviar</button>
+					<div >
+						<div>
+							<button id="boton-enviar" class="boton-enviar" type="submit">Enviar</button>
+						</div>
 						<div>
 							<p class="mensaje-exito" id="mensaje-exito">Formulario enviado exitosamente!</p>
 						</div>
