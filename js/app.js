@@ -11,7 +11,7 @@
      navToggle.setAttribute("aria-label", "Abrir menú");
    }
  });
- // Hide the menu when an option is selected
+ //Oculto los links y muestro el icono de menu
 const navLinks = document.querySelectorAll(".nav-menu a");
 
 navLinks.forEach((link) => {
