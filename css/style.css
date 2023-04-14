@@ -334,7 +334,7 @@ input, select, textarea{
 }
 
 .seccion3 p{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 1.3em;
   text-align: center;
 }
@@ -520,10 +520,10 @@ font-size: 16px;
 
 .mensaje-exito {
   font-size: 16px;
-  border: 2px solid var(--color-2);
+  border: 2px solid var(--color-4);
   border-radius: 5px;
   padding: 20px;
-  background-color:var(--color-1);
+  background-color:var(--color-5);
   color: white;
   display: none;
   }
